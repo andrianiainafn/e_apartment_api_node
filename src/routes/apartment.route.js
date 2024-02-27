@@ -1,9 +1,11 @@
 const route = require('express').Router()
-const {create,getApartment,editApartment, deletApartment}= require('../controller/apartment.controller')
+const {create,getApartment,editApartment, deleteApartment, getChartStat, getApartmentByNumApp}= require('../controller/apartment.controller')
 
-route.post('',create)
-route.get('',getApartment)
-route.put('/:id',editApartment)
-route.delete('/:id',deletApartment)
+route.post('/apartments',create)
+route.get('/apartments',getApartment)
+route.put('/apartments/:id',editApartment)
+route.delete('/apartments/:id',deleteApartment)
+route.get('/stat/apartment',getChartStat)
+route.get('/apartments/:id',getApartmentByNumApp)
 
 module.exports = route;
